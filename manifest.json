@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "URL to QR",
+  "version": "2.0",
+  "permissions": ["activeTab"],
+  "icons": {
+    "48": "icon48.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "38": "icon38.png",
+      "19": "icon19.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["qrcode.min.js", "qrcodecore.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["qrcode.min.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{813ec9af-c804-4fc8-99ba-5bea69632737}"
+    }
+  } 
+}
